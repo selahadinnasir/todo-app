@@ -22,10 +22,12 @@ function App() {
   
 
   return (
-    <div className="container">
-      <div className="heading">
+    <>
+    <div className="heading">
         <h1>To-Do List</h1>
       </div>
+    <div className="container">
+      
       <InputArea onAdd={addItem} />
       <div>
         <ul>
@@ -34,12 +36,13 @@ function App() {
               key={index}
               id={index}
               text={todoItem}
-              onChecked={deleteItem}
+              onDelete={deleteItem}
             />
           ))}
         </ul>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,43 +1,51 @@
 body {
-  background-color: #ffeaa7;
-  min-height: 70vh;
-  padding: 1rem;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url(todoback.PNG);
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensure the image covers the entire area */
+  width: 100%;
+  padding-bottom: 50px; /* Adjust the value as needed to add height below the image */
+  margin: 0;
   color: hsl(198, 1%, 29%);
   font-family: "Architects Daughter", cursive;
   text-align: center;
   font-size: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  width: 100%;
+  width: 650px;
   height: auto;
   min-height: 500px;
-  max-width: 500px;
-  min-width: 250px;
-  background: #f1f5f8;
-  background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+  background: black;
+  /* background-image: radial-gradient(#bfc0c1 7.2%, transparent 0); */
   background-size: 25px 25px;
   border-radius: 20px;
   box-shadow: 4px 3px 7px 2px #00000040;
   padding: 1rem;
   box-sizing: border-box;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 10px;
+    width: 100%;
+    min-height: 80vh;
+  }
+}
+
 .heading {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   margin-bottom: 1rem;
+  color: white;
 }
 .heading h1 {
-  transform: rotate(2deg);
-  padding: 0.2rem 1.2rem;
-  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
-  background-color: #fdcb6e;
-  font-size: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: inherit;
 }
 
 .form input {
@@ -50,8 +58,8 @@ body {
   border-bottom: dashed 3px #fdcb6e;
   font-family: "Architects Daughter", cursive;
   font-size: 1rem;
-  color: hsla(260, 2%, 25%, 0.7);
-  width: 70%;
+  color: white;
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -75,5 +83,58 @@ button span {
 li {
   text-align: left;
   position: relative;
-  padding: 0.5rem;
+  padding: 0.9rem;
+  padding-right: 80px;
+  cursor: pointer;
+  padding-left: 60px;
+}
+
+ul {
+  color: white;
+  list-style-type: none;
+}
+
+.completed  {
+  text-decoration: line-through;
+}
+
+li::before {
+  content: '⭕'; /* Unicode for circled tick */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 40px; /* Adjust size as needed */
+  color: rgb(236, 227, 227); /* Optional: color of the empty circle */
+}
+
+li.completed::before {
+  content: '⭕'; /* Unicode for circled tick */
+  color: white; /* Color of the circled tick */
+  font-size: 40px;
+}
+
+li.completed::after {
+  content: '✔'; /* Unicode for checkmark */
+  position: absolute;
+  padding: 10px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px; /* Adjust size as needed */
+  color: green; /* Optional: color of the checkmark */
+}
+
+
+.delete {
+    font-size: 18px; /* Increase the size */
+    padding: 5px;   /* Increase the padding */
+    margin: 10px; /* Add some margin for spacing */
+    background-color: rgb(240, 114, 114);
+
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
 }
