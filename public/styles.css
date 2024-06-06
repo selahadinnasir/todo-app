@@ -28,16 +28,20 @@ body {
   box-shadow: 4px 3px 7px 2px #00000040;
   padding: 1rem;
   box-sizing: border-box;
+  margin-bottom: 60px;
 }
 
 @media only screen and (max-width: 768px) {
   .container {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 60px;
     width: 100%;
     min-height: 80vh;
   }
 
+  .heading {
+    margin-bottom: 5px;
+  }
 }
 
 .heading {
