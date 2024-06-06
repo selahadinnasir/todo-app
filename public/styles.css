@@ -3,8 +3,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover; /* Ensure the image covers the entire area */
   width: 100%;
-  padding-bottom: 50px; /* Adjust the value as needed to add height below the image */
+  height: 100vh; /* Ensure the body covers the full viewport height */
   margin: 0;
+  padding: 0; /* Remove padding to avoid unnecessary scrolling */
   color: hsl(198, 1%, 29%);
   font-family: "Architects Daughter", cursive;
   text-align: center;
@@ -12,7 +13,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Prevent scrolling */
 }
+
 
 .container {
   width: 650px;
@@ -29,10 +32,12 @@ body {
 
 @media only screen and (max-width: 768px) {
   .container {
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 60px;
     width: 100%;
     min-height: 80vh;
   }
+
 }
 
 .heading {
